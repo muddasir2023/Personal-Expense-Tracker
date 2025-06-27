@@ -20,13 +20,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 
-# db = SQLAlchemy(app)
+
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 
-from models import User  # Ensure models.py imports only db, not app
-from routes import *     # Import routes after app initialization
+from models import User  
+from routes import *     
 
 @login_manager.user_loader
 def load_user(user_id):
