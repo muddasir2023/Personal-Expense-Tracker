@@ -4,9 +4,14 @@ from flask_login import LoginManager
 from extension import db
 from dotenv import load_dotenv
 import os
+import sys
+
 
 load_dotenv()
 
+path = '/home/muddasir/mysite/flask_app.py'
+if path not in sys.path:
+    sys.path.append(path)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key_here'
